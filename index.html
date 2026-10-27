@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0d0e12" />
+  <meta name="description" content="RARÔMETRO: uma entrevista de entretenimento conduzida por Hiromi Higuruma, com perguntas sorteadas e reações contextuais." />
+  <title>RARÔMETRO — Entrevista de Singularidade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="higuruma-edition">
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio" id="brandHome" aria-label="RARÔMETRO, página inicial">
+      <span class="brand-mark">R<span>°</span></span>
+      <span class="brand-copy"><strong>RARÔMETRO</strong><small>HUMAN SINGULARITY INTERVIEW</small></span>
+    </a>
+    <div class="top-status"><span class="status-dot"></span><span id="topStatus">SESSÃO ABERTA</span><span class="top-version">FAN PROJECT</span></div>
+  </header>
+
+  <main id="app" class="app-shell">
+    <section id="landingScreen" class="screen landing-screen" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> DEPARTAMENTO DE SINGULARIDADE HUMANA</div>
+        <h1 id="heroTitle">Vamos ver<br />o que <em>você tem.</em></h1>
+        <p class="hero-lede">Uma entrevista. Oito perguntas por sessão: sete sorteadas de um acervo com 39 questões comuns, mais a pergunta de superpoderes. Um advogado cansado tentando entender suas escolhas sem transformar tudo em acusação.</p>
+        <div class="hero-actions">
+          <button id="startButton" class="button button-primary">COMEÇAR A ENTREVISTA <span aria-hidden="true">↗</span></button>
+          <span class="time-note"><span class="tiny-clock">◷</span> 2–3 MINUTOS</span>
+        </div>
+        <div class="hero-footnote"><span class="micro-lock">▣</span> Sem conta, sem envio de respostas. O resultado é entretenimento, não estatística populacional.</div>
+      </div>
+      <div class="hero-visual higuruma-hero-visual">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="scanner-label label-top"><span class="mini-square"></span> INTERVIEWER / HIROMI HIGURUMA</div>
+        <div class="higuruma-stage hero-character-stage">
+          <div class="portrait-halo"></div>
+          <div id="heroAuditor" class="higuruma-portrait state-bored" role="img" aria-label="Hiromi Higuruma, expressão cansada">
+            <img class="portrait-image image-neutral" src="assets/higuruma-neutral.png" alt="" />
+            <img class="portrait-image image-intense" src="assets/higuruma-intense.webp" alt="" />
+            <img class="portrait-image image-stressed" src="assets/higuruma-overloaded.jpg" alt="" />
+          </div>
+          <div class="floating-chip chip-left">CASE FILE<br /><b>40 QUESTIONS</b></div>
+          <div class="floating-chip chip-right">CURRENT MOOD / <b id="heroMood">ENTEDIADO</b></div>
+        </div>
+        <div class="hero-quote"><span class="quote-mark">“</span><p id="heroQuote">Vamos começar. Espero que não seja necessário um segundo depoimento.</p><span class="quote-by">— HIGURUMA</span></div>
+      </div>
+      <div class="landing-bottom"><span>ENTREVISTA DE ENTRETENIMENTO · PERGUNTAS ALEATÓRIAS</span><span>REGISTRO <b>LOCAL</b></span></div>
+    </section>
+
+    <section id="quizScreen" class="screen quiz-screen hidden" aria-labelledby="questionTitle">
+      <div class="quiz-topline"><div class="eyebrow"><span class="eyebrow-line"></span> ENTREVISTA EM ANDAMENTO</div><div class="session-id">PROCESSO <span id="caseId">RH-404-01</span></div></div>
+      <div class="progress-row"><div class="progress-track"><div id="progressFill" class="progress-fill"></div></div><span id="progressLabel">01 / 08</span></div>
+      <div id="comboBanner" class="combo-banner hidden" role="status" aria-live="polite"></div>
+
+      <section class="interview-stage" aria-label="Hiromi Higuruma reage à entrevista">
+        <div class="interview-stage-top"><span class="panel-live"><i></i> HIGURUMA ESTÁ OUVINDO</span><span class="stage-file">ARQUIVO CONFIDENCIAL</span></div>
+        <div class="portrait-scene">
+          <div class="portrait-backdrop-grid" aria-hidden="true"></div>
+          <div class="portrait-halo"></div>
+          <div id="quizAuditor" class="higuruma-portrait state-bored" role="img" aria-label="Hiromi Higuruma">
+            <img class="portrait-image image-neutral" src="assets/higuruma-neutral.png" alt="" />
+            <img class="portrait-image image-intense" src="assets/higuruma-intense.webp" alt="" />
+            <img class="portrait-image image-stressed" src="assets/higuruma-overloaded.jpg" alt="" />
+          </div>
+          <div class="character-nameplate"><strong>HIROMI HIGURUMA</strong><span>ADVOGADO · ENTREVISTADOR</span></div>
+          <div class="stage-side-note"><span class="side-note-mark">§</span><span id="auditorCueTag">EXPRESSÃO</span><p id="auditorCue">Ele ainda está decidindo se vale a pena prestar atenção.</p></div>
+        </div>
+        <div class="dialogue-box"><div class="dialogue-head"><span class="dialogue-icon">“</span><span>HIGURUMA DIZ</span><span class="dialogue-live">AO VIVO</span></div><p id="auditorDialogue" aria-live="polite">“Vamos começar. Espero que não seja necessário um segundo depoimento.”</p><span class="dialogue-cursor">▍</span></div>
+      </section>
+
+      <section class="question-panel" aria-label="Pergunta atual">
+        <div class="question-meta"><span id="questionCategory" class="category-tag">HÁBITOS E ROTINA</span><span id="questionType" class="question-type">ESCOLHA UMA RESPOSTA</span></div>
+        <h2 id="questionTitle">Carregando pergunta...</h2>
+        <p id="questionDescription" class="question-description"></p>
+        <div id="optionsContainer" class="options-container"></div>
+        <div id="selectionHint" class="selection-hint">Escolha a alternativa mais próxima do que você faria.</div>
+        <div class="question-actions"><button id="backButton" class="button button-quiet" disabled>← VOLTAR</button><button id="continueButton" class="button button-primary" disabled>REGISTRAR RESPOSTA <span aria-hidden="true">→</span></button></div>
+        <div class="question-foot"><span><i class="foot-lock">▣</i> RESPOSTAS PROCESSADAS NESTE NAVEGADOR</span><span>SEM RESPOSTA CERTA.</span></div>
+      </section>
+    </section>
+
+    <section id="resultScreen" class="screen result-screen hidden" aria-labelledby="resultTitle">
+      <div id="normalResult" class="result-content">
+        <div class="result-topline"><div class="eyebrow"><span class="eyebrow-line"></span> RELATÓRIO DA ENTREVISTA</div><div class="report-status"><span class="status-dot"></span> ANÁLISE CONCLUÍDA</div></div>
+        <div class="result-grid">
+          <div class="result-main">
+            <div id="resultClassTag" class="result-class-tag">DESVIO LEVE</div>
+            <h2 id="resultTitle">Você é um <em>desvio leve.</em></h2>
+            <p id="resultDescription" class="result-description">Uma combinação curiosa de escolhas foi detectada.</p>
+            <div class="score-block"><div class="score-number"><span id="scoreValue">48</span><span class="score-outof">/ 100</span></div><div class="score-meta"><span>ÍNDICE LÚDICO DE SINGULARIDADE</span><small>Calculado pelas regras locais do Rarômetro.</small></div></div>
+            <div class="result-gauge"><div id="resultGaugeFill" class="result-gauge-fill"></div><div class="gauge-markers"><span>PADRÃO</span><span>IMPROVÁVEL</span><span>INCLASSIFICÁVEL</span></div></div>
+            <div class="result-verdict"><div class="verdict-stamp">§</div><div><span class="verdict-label">VEREDITO DE HIGURUMA</span><p id="resultVerdict">“Vou continuar observando. Por motivos profissionais.”</p></div></div>
+          </div>
+          <div class="result-side">
+            <div class="result-auditor-card"><div class="result-card-header"><span>ÚLTIMA EXPRESSÃO</span><span class="redaction-dot"></span></div>
+              <div id="resultAuditor" class="higuruma-portrait result-higuruma state-neutral" role="img" aria-label="Hiromi Higuruma no encerramento">
+                <img class="portrait-image image-neutral" src="assets/higuruma-neutral.png" alt="" />
+                <img class="portrait-image image-intense" src="assets/higuruma-intense.webp" alt="" />
+                <img class="portrait-image image-stressed" src="assets/higuruma-overloaded.jpg" alt="" />
+              </div>
+              <p id="resultAuditorText" class="result-auditor-text">“O expediente terminou. Minha curiosidade, infelizmente, não.”</p>
+            </div>
+            <div class="dimension-card"><div class="card-title-row"><span>MAPA DE DIMENSÕES</span><span class="card-index">04</span></div><div id="dimensionBars" class="dimension-bars"></div><p class="chart-note">Dimensões lúdicas derivadas das respostas desta sessão.</p></div>
+          </div>
+        </div>
+        <div id="combinationCard" class="combination-card hidden"><div class="combination-icon">§</div><div><span class="combination-eyebrow">PADRÃO DETECTADO</span><h3 id="combinationTitle">Curiosidade aplicada</h3><p id="combinationText">Uma combinação especial foi identificada nas suas respostas.</p></div></div>
+        <div class="result-actions"><button id="shareButton" class="button button-primary">COMPARTILHAR RELATÓRIO <span aria-hidden="true">↗</span></button><button id="restartButton" class="button button-quiet">NOVA ENTREVISTA ↻</button><span id="shareFeedback" class="share-feedback" aria-live="polite"></span></div>
+        <p class="method-note"><strong>Nota de método:</strong> cada sessão sorteia 7 perguntas de um acervo de 39 perguntas comuns e sempre inclui a pergunta de superpoderes. O RNG escolhe perguntas e ordem; as respostas, e não um número aleatório, determinam o índice. Isso não mede a raridade real de uma pessoa.</p>
+      </div>
+      <div id="secretResult" class="secret-result hidden">
+        <div class="secret-alert"><span class="alert-pulse"></span> RELATÓRIO RETIDO <span class="secret-case">CASE / 404-B</span></div>
+        <div class="secret-grid"><div class="secret-copy"><div class="eyebrow"><span class="eyebrow-line"></span> DEPARTAMENTO DE ANÁLISE INTERNA</div><h2 id="secretTitle">CLASSIFICAÇÃO<br /><em>NÃO EMITIDA.</em></h2><p id="secretLead" class="secret-lead">O sistema concluiu a coleta das respostas. Higuruma solicitou a suspensão do resultado.</p><div class="redacted-report"><div class="redacted-head"><span>NOTA DO ENTREVISTADOR</span><span class="lock-mark">▣ RESTRITO</span></div><p id="secretDialogue">“Eu normalmente atribuo uma pontuação a todos os indivíduos analisados.”</p><p>“Neste caso, prefiro não registrar minhas conclusões por escrito.”</p><div class="redacted-score"><span>PONTUAÇÃO FINAL</span><strong>[ RETIDA ]</strong></div></div><p class="secret-last-line" id="secretLastLine">“A entrevista terminou. A questão ainda não.”</p><div class="secret-actions"><button id="closeCaseButton" class="button button-primary">ENCERRAR O CASO <span aria-hidden="true">↗</span></button><button id="secretRestartButton" class="button button-quiet">OUTRA ENTREVISTA ↻</button></div></div><div class="secret-visual"><div class="secret-glitch-label">INFERENCE SUSPENDED</div>
+            <div id="secretAuditor" class="higuruma-portrait secret-higuruma state-chaos" role="img" aria-label="Higuruma sobrecarregado">
+              <img class="portrait-image image-neutral" src="assets/higuruma-neutral.png" alt="" />
+              <img class="portrait-image image-intense" src="assets/higuruma-intense.webp" alt="" />
+              <img class="portrait-image image-stressed" src="assets/higuruma-overloaded.jpg" alt="" />
+            </div><div class="secret-scan-grid"></div><div class="secret-stamp">NO<br />COMMENT</div><p class="secret-visual-caption">Higuruma pede alguns segundos para se recompor.</p></div></div>
+      </div>
+    </section>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  </main>
+  <footer class="site-footer"><span>RARÔMETRO © 2026 · FAN PROJECT NÃO OFICIAL</span><span>Jujutsu Kaisen e seus personagens pertencem aos respectivos titulares.</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
